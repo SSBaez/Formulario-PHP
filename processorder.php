@@ -16,6 +16,7 @@
 	$tireQty = $_POST["tireQty"];
 	$oilQty = $_POST['oilQty'];
 	$sparkQty = $_POST['sparkQty'];
+	$find = $_POST['find']
 
 	$totalQty = $tireQty + $oilQty + $sparkQty;
 
@@ -42,6 +43,17 @@
 	$taxRate = 0.10; // el impuesto de vtas local es del 10%
 	$totalAmount *= (1 + $taxRate);
 	echo "Total incluiding tax: $".number_format($totalAmount, 2)."</p>";
+
+	echo 'isset ($tireQty): '.isset ($tireQty).'<br />';
+	echo 'isset ($nothere): '.isset ($nothere).'<br />';
+	echo 'empty ($tireQty): '.empty ($tireQty).'<br />';
+	echo 'empty ($nothere): '.empty ($nothere).'<br />';
+
+	if(empty($tireQty)){
+		echo "<p> esta huevada es true";
+	}
+	else if(!empty($tireQty))
+		echo "<p> esto es false";
 
 ?>
 </body>
