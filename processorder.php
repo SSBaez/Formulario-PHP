@@ -70,17 +70,17 @@
 						."\t".$address."\n";
 
 			// abrir archivo para adjuntar
-			@$fp = fopen("$document_root/../orders/orders.txt", 'ab');
-
+			@$fp = fopen('$document_root/../data/orders/order.txt', 'ab');
 			if(!$fp){
 				echo "<p><strong> Your order could not be processed at this time.
-							Please try again later.</stromg></p>";
+				Please try again later.</strong></p>";
 				exit;
 			}
 
 			flock($fp, LOCK_EX);
 			fwrite($fp, $outputstring, strlen($outputstring));
 			flock($fp, LOCK_UN);
+			fclose($fp);
 
 			echo "<p>Order written.</p>";
 			?>
