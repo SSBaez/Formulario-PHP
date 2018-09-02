@@ -26,7 +26,10 @@
 		exit;
 	}
 
+	// para leer el archivo
 	while(!feof($fp)){
+		// lee línea por línea hasta que encuentre un nuevo caracter de línea
+		// (\n) o EOF
 		$order = fgets($fp);
 		echo htmlspecialchars($order)."<br />";
 	}
