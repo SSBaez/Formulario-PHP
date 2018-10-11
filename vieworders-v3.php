@@ -50,13 +50,17 @@
     </tr>";
 
   for($i = 0; $i < $number_of_orders; $i++){
-    // dividir c/linea
+    // explode para dividir todo el renglon en cadenas
     $line = explode("\t", $orders[$i]);
+		// cuando se almacenaron los datos se utilizo \t para delimitar los datos
+		// es decir, este codigo divide las cadenas pasada en partes. cada caracter
+		// de tabulacion separa los elementos
 
-    // conservar solamente el número de elementos ordenados
-    $line[1] = intval($line[1]);
-    $line[2] = intval($line[2]);
-    $line[3] = intval($line[3]);
+    // intval extrae los numeros de las cadenas, intval convierte una cadena en un entero
+		// ignorara todo aquello que no se pueda convertir en un entero
+    $line[1] = intval($line[1]); // corresponde a Tires
+    $line[2] = intval($line[2]); // corresponde a Oil
+    $line[3] = intval($line[3]); // corresponde a Spark plugs
 
     // mostrar c/orden
     echo "<tr>
