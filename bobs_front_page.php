@@ -1,8 +1,8 @@
 <?php
 
-$pictures = ['brakes.png', 'headlight.png',
-             'spark_plug.png', 'steering_wheel.png',
-             'tire.png', 'whiper_blade.png'];
+$pictures = ['images/brakes.png', 'images/headlight.png',
+             'images/spark_plug.png', 'images/steering_wheel.png',
+             'images/tire.png', 'images/whiper_blade.png'];
 
 shuffle($pictures);
 
